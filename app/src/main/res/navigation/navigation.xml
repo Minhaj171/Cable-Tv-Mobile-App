@@ -98,6 +98,10 @@
         android:id="@+id/getConnection"
         android:name="com.example.dishtv.getConnection"
         android:label="fragment_get_connection"
-        tools:layout="@layout/fragment_get_connection" />
+        tools:layout="@layout/fragment_get_connection" >
+        <action
+            android:id="@+id/action_getConnection_to_login"
+            app:destination="@id/login" />
+    </fragment>
 
 </navigation>

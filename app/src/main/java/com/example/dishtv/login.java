@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -40,11 +41,19 @@ public class login extends Fragment {
         final NavController navController = Navigation.findNavController(view);
 
         Button button = view.findViewById(R.id.apploginButton);
+        TextView textView = view.findViewById(R.id.appSignup);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 navController.navigate(R.id.action_login_to_dashboard);
+            }
+        });
+
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_login_to_getConnection);
             }
         });
 

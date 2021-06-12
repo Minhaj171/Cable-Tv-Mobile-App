@@ -7,6 +7,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,23 +22,27 @@ public class channel_package extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_channel_package, container, false);
+        View view = inflater.inflate(R.layout.fragment_channel_package, container, false);
+        RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
+        PackageData[] packageData = new PackageData[]{
+          new PackageData(R.drawable.ic_plug_green, "Ghoost", "20 Channels", "1000"),
+          new PackageData(R.drawable.ic_plugin, "Boost", "35 Channels", "5000"),
+          new PackageData(R.drawable.ic_rocket, "Hoost", "45 Channels", "10000"),
+                new PackageData(R.drawable.ic_plug_green, "Ghoost", "20 Channels", "1000"),
+          new PackageData(R.drawable.ic_plugin, "Boost", "35 Channels", "5000"),
+          new PackageData(R.drawable.ic_rocket, "Hoost", "45 Channels", "10000") ,
+        };
+
+        PackageAdapter packageAdapter = new PackageAdapter(packageData, channel_package.this);
+        recyclerView.setAdapter(packageAdapter);
+        return view;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        final NavController navController = Navigation.findNavController(view);
-
-        ImageView ImageView = view.findViewById(R.id.forowardPackage);
-
-        ImageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                navController.navigate(R.id.action_dashboard_to_channel_package);
-            }
-        });
 
     }
 }

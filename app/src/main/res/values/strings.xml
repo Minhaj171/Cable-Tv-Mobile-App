@@ -34,4 +34,5 @@
     <string name="forgetPassword">Forget Password</string>
     <string name="name">Enter name</string>
     <string name="phone_number">Phone number</string>
+    <string name="subscribe">Subscribe</string>
 </resources>

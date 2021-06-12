@@ -11,6 +11,7 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 
 
@@ -30,12 +31,12 @@ public class getConnection extends Fragment {
 
         final NavController navController = Navigation.findNavController(view);
 
-        ImageView ImageView = view.findViewById(R.id.forowardGetConnection);
+        Button button = view.findViewById(R.id.applyButton);
 
-        ImageView.setOnClickListener(new View.OnClickListener() {
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navController.navigate(R.id.action_login_to_getConnection);
+                navController.navigate(R.id.action_getConnection_to_login);
             }
         });
 

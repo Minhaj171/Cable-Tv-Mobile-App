@@ -28,14 +28,14 @@
             app:layout_constraintVertical_bias="0.289" />
 
         <TextView
-            android:id="@+id/apploginName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/appSignup"
+            android:layout_width="58dp"
+            android:layout_height="22dp"
             android:layout_marginTop="8dp"
             android:text="@string/signup"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.886"
+            app:layout_constraintHorizontal_bias="0.911"
             app:layout_constraintStart_toEndOf="@+id/apploginEditTextForgetPass"
             app:layout_constraintTop_toBottomOf="@+id/apploginEditTextPassword"
             app:layout_constraintVertical_bias="0.0" />
