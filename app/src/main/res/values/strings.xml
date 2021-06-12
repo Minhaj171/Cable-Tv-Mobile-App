@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">DishTv</string>
+
+    <!--    Pay bill page-->
+    <string name="please">Enter value</string>
+    <string name="edit">Edit</string>
+    <string name="card_name">Name on card</string>
+    <string name="card_number">Card Number</string>
+    <string name="expiry_date">Expiry date</string>
+    <string name="security_date">Security date</string>
+    <string name="zip_code">ZIP/Postal code</string>
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <!--    Main Activity Xml-->
+    <string name="feedback">Select feedback type</string>
+    <string name="login">login</string>
+    <string name="signup">Signup</string>
+    <string name="getConnection">Get Connection</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="channelPackage">Package</string>
+    <string name="profile">profile</string>
+    <string name="payBill">Pay</string>
+    <string name="channeloffers">channel Offers</string>
+    <string name="channelList">Channel List</string>
+    <string name="selectfeedback">Feedback</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="todo">TODO</string>
+
+
+    <!--    log in xml-->
+    <string name="enterEmail">Enter Email</string>
+    <string name="enterPassword">Enter Password</string>
+    <string name="forgetPassword">Forget Password</string>
+    <string name="name">Enter name</string>
+    <string name="phone_number">Phone number</string>
+</resources>

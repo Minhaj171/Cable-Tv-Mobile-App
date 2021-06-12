@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/appSplashScreen">
+
+    <fragment
+        android:id="@+id/appSplashScreen"
+        android:name="com.example.dishtv.appSplashScreen"
+        android:label="fragment_app_splash_screen"
+        tools:layout="@layout/fragment_app_splash_screen" >
+        <action
+            android:id="@+id/action_appSplashScreen_to_login"
+            app:destination="@id/login" />
+    </fragment>
+    <fragment
+        android:id="@+id/login"
+        android:name="com.example.dishtv.login"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_login_to_dashboard"
+            app:destination="@id/dashboard" />
+        <action
+            android:id="@+id/action_login_to_signup"
+            app:destination="@id/signup" />
+        <action
+            android:id="@+id/action_login_to_getConnection"
+            app:destination="@id/getConnection" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/signup"
+        android:name="com.example.dishtv.signup"
+        android:label="fragment_signup"
+        tools:layout="@layout/fragment_signup" >
+        <action
+            android:id="@+id/action_signup_to_login"
+            app:destination="@id/login" />
+    </fragment>
+    <fragment
+        android:id="@+id/dashboard"
+        android:name="com.example.dishtv.dashboard"
+        android:label="fragment_dashboard"
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_dashboard_to_payment"
+            app:destination="@id/payment" />
+        <action
+            android:id="@+id/action_dashboard_to_channel_package"
+            app:destination="@id/channel_package" />
+        <action
+            android:id="@+id/action_dashboard_to_feedback"
+            app:destination="@id/feedback" />
+        <action
+            android:id="@+id/action_dashboard_to_profile"
+            app:destination="@id/profile" />
+    </fragment>
+    <fragment
+        android:id="@+id/channel"
+        android:name="com.example.dishtv.channel"
+        android:label="fragment_channel"
+        tools:layout="@layout/fragment_channel" />
+    <fragment
+        android:id="@+id/channel_package"
+        android:name="com.example.dishtv.channel_package"
+        android:label="fragment_channel_package"
+        tools:layout="@layout/fragment_channel_package" >
+        <action
+            android:id="@+id/action_channel_package_to_channel_offers"
+            app:destination="@id/channel_offers" />
+        <action
+            android:id="@+id/action_channel_package_to_channel"
+            app:destination="@id/channel" />
+    </fragment>
+    <fragment
+        android:id="@+id/channel_offers"
+        android:name="com.example.dishtv.channel_offers"
+        android:label="fragment_channel_offers"
+        tools:layout="@layout/fragment_channel_offers" />
+    <fragment
+        android:id="@+id/payment"
+        android:name="com.example.dishtv.payment"
+        android:label="fragment_payment"
+        tools:layout="@layout/fragment_payment" />
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.example.dishtv.profile"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/feedback"
+        android:name="com.example.dishtv.feedback"
+        android:label="fragment_feedback"
+        tools:layout="@layout/fragment_feedback" />
+    <fragment
+        android:id="@+id/getConnection"
+        android:name="com.example.dishtv.getConnection"
+        android:label="fragment_get_connection"
+        tools:layout="@layout/fragment_get_connection" />
+
+</navigation>
