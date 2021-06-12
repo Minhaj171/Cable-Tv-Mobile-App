@@ -1,6 +1,7 @@
 package com.example.dishtv;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import org.jetbrains.annotations.NotNull;
@@ -47,6 +50,18 @@ public class PackageAdapter extends RecyclerView.Adapter<PackageAdapter.ViewHold
             @Override
             public void onClick(View v) {
                 Toast.makeText(context, packageDataList.getPackageName(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v ) {
+//                Intent intent = new Intent(context, profileChannel.class);
+                final NavController navController = Navigation.findNavController(v);
+                if (v.getId()==position){
+                    navController.navigate(R.id.action_channel_package_to_channel);
+                }
             }
         });
     }
