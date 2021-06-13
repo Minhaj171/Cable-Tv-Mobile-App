@@ -35,7 +35,7 @@ public class channel_package extends Fragment {
           new PackageData(R.drawable.ic_rocket, "Hoost", "45 Channels", "10000") ,
         };
 
-        PackageAdapter packageAdapter = new PackageAdapter(packageData, channel_package.this);
+        PackageAdapter packageAdapter = new PackageAdapter(packageData, requireContext());
         recyclerView.setAdapter(packageAdapter);
         return view;
     }

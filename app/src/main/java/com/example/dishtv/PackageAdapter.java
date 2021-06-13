@@ -1,5 +1,6 @@
 package com.example.dishtv;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -22,9 +23,9 @@ import org.jetbrains.annotations.NotNull;
 public class PackageAdapter extends RecyclerView.Adapter<PackageAdapter.ViewHolder>{
     PackageData[] packageData;
     Context context;
-    public PackageAdapter(PackageData[] packageData, channel_package fragment) {
+    public PackageAdapter(PackageData[] packageData, Context context) {
         this.packageData = packageData;
-        this.context = fragment.requireContext();
+        this.context = context;
     }
 
     @NonNull
@@ -46,22 +47,22 @@ public class PackageAdapter extends RecyclerView.Adapter<PackageAdapter.ViewHold
         holder.pCount.setText(packageDataList.getChannelCount());
         holder.pPrice.setText(packageDataList.getChannelPrice());
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(context, packageDataList.getPackageName(), Toast.LENGTH_SHORT).show();
-            }
-        });
-
+//        holder.itemView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(context, packageDataList.getPackageName(), Toast.LENGTH_SHORT).show();
+//            }
+//        });
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v ) {
-//                Intent intent = new Intent(context, profileChannel.class);
-                final NavController navController = Navigation.findNavController(v);
-                if (v.getId()==position){
+                int position = holder.getAdapterPosition();
+                if (position != RecyclerView.NO_POSITION){
+                    NavController navController = Navigation.findNavController((Activity) context, R.id.fragment3);
                     navController.navigate(R.id.action_channel_package_to_channel);
                 }
+
             }
         });
     }
