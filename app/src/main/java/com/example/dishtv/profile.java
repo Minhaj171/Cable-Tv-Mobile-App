@@ -1,5 +1,6 @@
 package com.example.dishtv;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -12,11 +13,14 @@ import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import butterknife.OnClick;
 
 
 public class profile extends Fragment {
@@ -28,26 +32,44 @@ public class profile extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
-        disable();
         Name = view.findViewById(R.id.profile_clint_name);
         Phone = view.findViewById(R.id.profile_clint_phone);
         Address = view.findViewById(R.id.profile_clint_address);
         ConnectId = view.findViewById(R.id.profile_clint_connection);
         Email = view.findViewById(R.id.profile_clint_email);
-        editSave = view.findViewById(R.id.clint_button_subscribe);
+        editSave = view.findViewById(R.id.clint_button_save);
+        disable();
 
         editSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!validateName() || !validatePhone() || !validateAddress() || !validateConnectID() || !validateAddress() || !validateEmail()){
-                    return;
-                }
-                Toast.makeText(requireContext(), "Profile Successfully completed",Toast.LENGTH_SHORT).show();
+                changeText();
             }
         });
 
-
         return view;
+    }
+
+//    @OnClick(R.id.clint_button_save)
+//    void onSaveClick(){
+//        changeText();
+//    }
+
+    private void changeText() {
+        String buttonText = editSave.getText().toString().trim();
+        if (buttonText.contentEquals(getResources().getText(R.string.edit))) {
+            editSave.setText(R.string.save);
+            editSave.setBackgroundResource(R.drawable.change_button_color);
+            enable();
+        } else if (buttonText.contentEquals(getResources().getText(R.string.save))) {
+            if(!validateName() || !validatePhone() || !validateAddress() || !validateConnectID() || !validateAddress() || !validateEmail()){
+                return;
+            }
+            Toast.makeText(requireContext(), "Profile Successfully Updated",Toast.LENGTH_SHORT).show();
+            editSave.setText(R.string.edit);
+            editSave.setBackgroundResource(R.drawable.disable_button_color);
+            disable();
+        }
     }
 
     private void disable() {
@@ -63,9 +85,17 @@ public class profile extends Fragment {
         Address.setEnabled(true);
         ConnectId.setEnabled(true);
         Email.setEnabled(true);
+        showCursor();
+    }
+    private void showCursor(){
+        Name.setFocusableInTouchMode(true);
+        Name.requestFocus();
+        InputMethodManager imm = (InputMethodManager) requireActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.showSoftInput(Name, InputMethodManager.SHOW_IMPLICIT);
     }
 
-//    validate user profile
+
+    //    validate user profile
     private boolean validateName(){
         String userInputName = Name.getEditableText().toString().trim();
         if (userInputName.isEmpty()) {

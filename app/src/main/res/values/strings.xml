@@ -4,6 +4,7 @@
     <!--    Pay bill page-->
     <string name="please">Enter value</string>
     <string name="edit">Edit</string>
+    <string name="save">Save</string>
     <string name="card_name">Name on card</string>
     <string name="card_number">Card Number</string>
     <string name="expiry_date">Expiry date</string>

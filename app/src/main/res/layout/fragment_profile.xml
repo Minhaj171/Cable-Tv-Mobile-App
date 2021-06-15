@@ -109,6 +109,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
+                    android:enabled="false"
                     android:hint="MD Minhajul Islam"
                     android:layout_marginStart="2dp" />
 
@@ -134,6 +135,7 @@
                     android:id="@+id/profile_clint_phone"
                     android:layout_marginLeft="2dp"
                     android:inputType="number"
+                    android:enabled="false"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="01881866593"
@@ -161,6 +163,7 @@
                     android:id="@+id/profile_clint_address"
                     android:layout_marginLeft="2dp"
                     android:inputType="text"
+                    android:enabled="false"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Dhaka, Narayonganj"
@@ -190,6 +193,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="number"
+                    android:enabled="false"
                     android:hint="5020"
                     android:layout_marginStart="2dp" />
 
@@ -216,6 +220,7 @@
                     android:layout_marginLeft="2dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:enabled="false"
                     android:inputType="textEmailAddress"
                     android:hint="minhaj.softifybd@gmail.com"
                     android:layout_marginStart="2dp" />
@@ -267,9 +272,9 @@
 
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/clint_button_subscribe"
+                    android:id="@+id/clint_button_save"
                     android:background="@drawable/edit_profile_shape"
-                    android:text="Edit Profile"
+                    android:text="@string/edit"
                     android:textAllCaps="false"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
