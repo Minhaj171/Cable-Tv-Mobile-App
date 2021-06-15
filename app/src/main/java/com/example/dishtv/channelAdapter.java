@@ -30,11 +30,11 @@ public class channelAdapter extends RecyclerView.Adapter<channelAdapter.ViewHold
     Context context;
 
 
-
     public channelAdapter(ChannelData[] channelData, Context context) {
         this.channelData = channelData;
         this.context = context;
     }
+
 
     @NonNull
     @NotNull
@@ -64,14 +64,6 @@ public class channelAdapter extends RecyclerView.Adapter<channelAdapter.ViewHold
                 int position = holder.getAdapterPosition();
                 if (position != RecyclerView.NO_POSITION) {
                     FragmentManager manager = ((AppCompatActivity)context).getSupportFragmentManager();
-//                    NavController navController = Navigation.findNavController((Activity) context, R.id.fragment3);
-//                    navController.navigate(R.id.action_channel_to_channelProfile);
-//                    Intent intent = new Intent(context, ChannelProfile.class);
-//                    intent.putExtra("imageUrl", channelDataList.getChannelLogo());
-//                    intent.putExtra("name", channelDataList.getChannelName());
-//                    intent.putExtra("channel type", channelDataList.getChannelType());
-//                    context.startActivity(intent);
-
                     Bundle bundle = new Bundle();
                     bundle.putInt("imageUrl", channelDataList.getChannelLogo());
                     bundle.putString("channelName", channelDataList.getChannelName());

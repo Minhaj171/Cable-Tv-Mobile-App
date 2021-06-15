@@ -23,6 +23,12 @@ import org.jetbrains.annotations.NotNull;
 public class PackageAdapter extends RecyclerView.Adapter<PackageAdapter.ViewHolder>{
     PackageData[] packageData;
     Context context;
+    private ChannelDataListener channelInterface;
+
+    public void itemClick(ChannelDataListener channelDataListener){
+        this.channelInterface = channelDataListener;
+    }
+
     public PackageAdapter(PackageData[] packageData, Context context) {
         this.packageData = packageData;
         this.context = context;
@@ -35,7 +41,7 @@ public class PackageAdapter extends RecyclerView.Adapter<PackageAdapter.ViewHold
         Context context;
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View view = layoutInflater.inflate(R.layout.item_list, parent, false);
-        ViewHolder viewHolder = new ViewHolder(view);
+        ViewHolder viewHolder = new ViewHolder(view,channelInterface);
         return viewHolder;
     }
 
@@ -59,10 +65,8 @@ public class PackageAdapter extends RecyclerView.Adapter<PackageAdapter.ViewHold
             public void onClick(View v ) {
                 int position = holder.getAdapterPosition();
                 if (position != RecyclerView.NO_POSITION){
-                    NavController navController = Navigation.findNavController((Activity) context, R.id.fragment3);
-                    navController.navigate(R.id.action_channel_package_to_channel);
+                    channelInterface.respond(position);
                 }
-
             }
         });
     }
@@ -72,18 +76,23 @@ public class PackageAdapter extends RecyclerView.Adapter<PackageAdapter.ViewHold
         return packageData.length;
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         ImageView pImage;
         TextView pName;
         TextView pCount;
         TextView pPrice;
 
-        public ViewHolder(@NonNull @NotNull View itemView) {
+        public ViewHolder(@NonNull @NotNull View itemView, ChannelDataListener channelInterface) {
             super(itemView);
             pImage = itemView.findViewById(R.id.package_Image);
             pName = itemView.findViewById(R.id.package_name);
             pCount = itemView.findViewById(R.id.package_count);
             pPrice = itemView.findViewById(R.id.package_price);
+        }
+
+        @Override
+        public void onClick(View v) {
+            channelInterface.respond(getAdapterPosition());
         }
     }
 }

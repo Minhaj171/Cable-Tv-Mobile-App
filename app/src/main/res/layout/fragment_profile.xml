@@ -6,28 +6,278 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".profile">
 
-    <ImageView
-        android:id="@+id/forowardProfile"
-        android:layout_width="wrap_content"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/package1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_arrow_forward"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.955"
-        app:layout_constraintStart_toStartOf="parent"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="20dp"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginVertical="5dp"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/user_Image"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/ic_man"
+            android:contentDescription="@string/todo" />
+
+        <TextView
+            android:id="@+id/user_name"
+            android:textStyle="bold"
+            android:layout_marginLeft="160dp"
+            android:layout_marginTop="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Md Minhajul Islam"
+            android:textSize="16sp"
+            android:layout_marginStart="155dp" />
+
+        <TextView
+            android:id="@+id/user_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="50dp"
+            android:text="Active"
+            android:textSize="14sp"
+            android:layout_marginStart="155dp" />
+
+        <TextView
+            android:id="@+id/user_balence"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="75dp"
+            android:text="Balance: 250.tk"
+            android:textSize="12sp"
+            android:layout_marginStart="155dp" />
+
+<!--        <ImageButton-->
+<!--            android:id="@+id/button_subscribe"-->
+<!--            android:background="@drawable/ic_plus"-->
+<!--            android:textSize="12sp"-->
+<!--            android:layout_marginTop="130dp"-->
+<!--            android:layout_marginLeft="150dp"-->
+<!--            android:layout_width="20dp"-->
+<!--            android:layout_height="20dp"-->
+<!--            android:layout_marginStart="330dp" />-->
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/profile"
-        android:textSize="28sp"
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/package2"
+        android:layout_width="match_parent"
+        android:layout_height="660dp"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginVertical="5dp"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.404" />
+        app:layout_constraintTop_toBottomOf="@+id/package1"
+        app:layout_constraintVertical_bias="0.0">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            >
+            <LinearLayout
+                android:id="@+id/name_linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="2dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Name : "
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/profile_clint_name"
+                    android:layout_marginLeft="2dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:hint="MD Minhajul Islam"
+                    android:layout_marginStart="2dp" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/phone_linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="2dp"
+                android:layout_below="@+id/name_linear_layout"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Phone : "
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/profile_clint_phone"
+                    android:layout_marginLeft="2dp"
+                    android:inputType="number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="01881866593"
+                    android:layout_marginStart="2dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/address_linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="2dp"
+                android:layout_below="@+id/phone_linear_layout"
+
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Address : "
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/profile_clint_address"
+                    android:layout_marginLeft="2dp"
+                    android:inputType="text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Dhaka, Narayonganj"
+                    android:layout_marginStart="2dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/connection_linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="2dp"
+                android:layout_below="@+id/address_linear_layout"
+
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Connection id : "
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/profile_clint_connection"
+                    android:layout_marginLeft="2dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:hint="5020"
+                    android:layout_marginStart="2dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/email_linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="2dp"
+                android:layout_below="@+id/connection_linear_layout"
+
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Email : "
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/profile_clint_email"
+                    android:layout_marginLeft="2dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:hint="minhaj.softifybd@gmail.com"
+                    android:layout_marginStart="2dp" />
+
+            </LinearLayout>
+
+
+
+
+
+        </RelativeLayout>
+
+
+
+
+
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="10dp"-->
+<!--            android:layout_marginTop="65dp"-->
+<!--            android:text="Phone Number : "-->
+<!--            android:textSize="18sp" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="10dp"-->
+<!--            android:layout_marginTop="105dp"-->
+<!--            android:text="Email : "-->
+<!--            android:textSize="18sp" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="10dp"-->
+<!--            android:layout_marginTop="145dp"-->
+<!--            android:text="Connection id : "-->
+<!--            android:textSize="18sp" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="10dp"-->
+<!--            android:layout_marginTop="185dp"-->
+<!--            android:text="Address : "-->
+<!--            android:textSize="18sp" />-->
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/clint_button_subscribe"
+                    android:background="@drawable/edit_profile_shape"
+                    android:text="Edit Profile"
+                    android:textAllCaps="false"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+              />
+
+
+    </androidx.cardview.widget.CardView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

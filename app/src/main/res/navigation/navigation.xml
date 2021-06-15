@@ -87,7 +87,11 @@
         android:id="@+id/payment"
         android:name="com.example.dishtv.payment"
         android:label="fragment_payment"
-        tools:layout="@layout/fragment_payment" />
+        tools:layout="@layout/fragment_payment" >
+        <action
+            android:id="@+id/action_payment_to_dashboard"
+            app:destination="@id/dashboard" />
+    </fragment>
     <fragment
         android:id="@+id/profile"
         android:name="com.example.dishtv.profile"

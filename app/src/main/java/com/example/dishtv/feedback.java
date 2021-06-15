@@ -29,14 +29,14 @@ public class feedback extends Fragment {
 
         final NavController navController = Navigation.findNavController(view);
 
-        ImageView ImageView = view.findViewById(R.id.forowardFeedback);
-
-        ImageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                navController.navigate(R.id.action_dashboard_to_feedback);
-            }
-        });
+//        ImageView ImageView = view.findViewById(R.id.forowardFeedback);
+//
+//        ImageView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                navController.navigate(R.id.action_dashboard_to_feedback);
+//            }
+//        });
 
     }
 }

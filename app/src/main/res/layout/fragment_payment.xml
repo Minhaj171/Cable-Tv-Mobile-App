@@ -7,17 +7,6 @@
     tools:context=".payment">
 
 
-    <ImageButton
-        android:id="@+id/forowardPayment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_arrow_forward"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.002" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -49,11 +38,12 @@
         app:layout_constraintVertical_bias="0.302" />
 
     <EditText
-        android:id="@+id/editText"
-        android:layout_width="250dp"
-        android:layout_height="44dp"
+        android:id="@+id/clint_payment_amount"
+        android:layout_width="325dp"
+        android:layout_height="46dp"
         android:background="@drawable/square_shape_of_edittext"
         android:hint="@string/please"
+        android:inputType="number"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
@@ -64,18 +54,6 @@
 
     </EditText>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button2"
-        android:layout_width="61dp"
-        android:layout_height="48dp"
-        android:text="@string/edit"
-        android:textSize="8sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/editText"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.218" />
 
     <TextView
         android:layout_width="128dp"
@@ -91,11 +69,12 @@
         app:layout_constraintVertical_bias="0.57" />
 
     <EditText
-        android:id="@+id/editText4"
-        android:layout_width="315dp"
+        android:id="@+id/clint_zip_code"
+        android:layout_width="325dp"
         android:layout_height="43dp"
         android:background="@drawable/square_shape_of_edittext"
         android:hint="@string/please"
+        android:inputType="number"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
@@ -115,18 +94,19 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/editText2"
+        app:layout_constraintStart_toEndOf="@+id/clint_expiry_date"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
         app:layout_constraintVertical_bias="0.515">
 
     </EditText>
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/clint_expiry_date"
         android:layout_width="157dp"
         android:layout_height="42dp"
         android:background="@drawable/square_shape_of_edittext"
         android:hint="@string/please"
+        android:inputType="date"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
@@ -138,11 +118,12 @@
     </EditText>
 
     <EditText
-        android:id="@+id/editText3"
-        android:layout_width="250dp"
+        android:id="@+id/clint_card_number"
+        android:layout_width="325dp"
         android:layout_height="44dp"
         android:background="@drawable/square_shape_of_edittext"
         android:hint="@string/please"
+        android:inputType="text"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
@@ -168,25 +149,29 @@
         app:layout_constraintVertical_bias="0.177" />
 
     <EditText
+        android:id="@+id/clint_security_date"
         android:layout_width="155dp"
         android:layout_height="42dp"
         android:background="@drawable/square_shape_of_edittext"
         android:hint="@string/please"
+        android:inputType="date"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/editText2"
+        app:layout_constraintStart_toEndOf="@+id/clint_expiry_date"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
         app:layout_constraintVertical_bias="0.517">
 
     </EditText>
 
     <EditText
-        android:layout_width="250dp"
+        android:id="@+id/clint_card_name"
+        android:layout_width="325dp"
         android:layout_height="44dp"
         android:background="@drawable/square_shape_of_edittext"
         android:hint="@string/please"
+        android:inputType="text"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
@@ -238,15 +223,16 @@
         app:layout_constraintVertical_bias="0.431" />
 
     <Button
-        android:id="@+id/button3"
-        android:layout_width="311dp"
+        android:id="@+id/clint_button_send"
+        android:layout_width="325dp"
         android:layout_height="61dp"
-        android:text="Button"
+        android:text="Send"
+        android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintHorizontal_bias="0.000"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/editText4"
+        app:layout_constraintTop_toBottomOf="@+id/clint_zip_code"
         app:layout_constraintVertical_bias="0.209" />
 
     <androidx.constraintlayout.widget.Guideline

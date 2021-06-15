@@ -30,6 +30,7 @@ public class dashboard extends Fragment {
         // Inflate the layout for this fragment
 
         return inflater.inflate(R.layout.fragment_dashboard, container, false);
+//        return LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_dashboard, parent, false);
     }
 
 
@@ -38,39 +39,39 @@ public class dashboard extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         final NavController navController = Navigation.findNavController(view);
-//        ImageButton ButtonPackage = view.findViewById(R.id.channelPackage);
-//        ImageButton ButtonProfile = view.findViewById(R.id.userProfile);
-//        ImageButton ButtonPayment = view.findViewById(R.id.userPayment);
-//        ImageButton ButtonFeedback = view.findViewById(R.id.userFeedback);
-//
-//        ButtonPackage.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                navController.navigate(R.id.action_dashboard_to_channel_package);
-//            }
-//        });
-//
-//        ButtonProfile.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                navController.navigate(R.id.action_dashboard_to_profile);
-//            }
-//        });
-//
-//        ButtonPayment.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                navController.navigate(R.id.action_dashboard_to_payment);
-//            }
-//        });
-//
-//        ButtonFeedback.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                navController.navigate(R.id.action_dashboard_to_feedback);
-//            }
-//        });
-//
+        CardView payment = view.findViewById(R.id.make_payment);
+        CardView profile = view.findViewById(R.id.user_profile);
+        CardView packages = view.findViewById(R.id.user_package);
+        CardView feedback = view.findViewById(R.id.user_feedback);
+
+        packages.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_dashboard_to_channel_package);
+            }
+        });
+
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_dashboard_to_profile);
+            }
+        });
+
+        payment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_dashboard_to_payment);
+            }
+        });
+
+        feedback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_dashboard_to_feedback);
+            }
+        });
+
 
 
     }

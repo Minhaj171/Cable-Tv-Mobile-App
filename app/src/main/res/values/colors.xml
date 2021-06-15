@@ -15,4 +15,5 @@
     <color name="black_overlay">#66000000</color>
     <color name="red">#F81D1D</color>
     <color name="green">#E935B11A</color>
+    <color name="profile">#7b7284</color>
 </resources>

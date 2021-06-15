@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 public class appSplashScreen extends Fragment {
 
@@ -31,9 +32,9 @@ public class appSplashScreen extends Fragment {
 
         final NavController navController = Navigation.findNavController(view);
 
-        ImageButton imageButton = view.findViewById(R.id.appSplashScreenLogoButton);
+        ImageView imageView = view.findViewById(R.id.appSplashScreenLogoButton);
 
-        imageButton.setOnClickListener(new View.OnClickListener() {
+        imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 navController.navigate(R.id.action_appSplashScreen_to_login);
