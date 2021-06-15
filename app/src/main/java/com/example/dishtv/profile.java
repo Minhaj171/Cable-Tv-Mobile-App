@@ -55,6 +55,7 @@ public class profile extends Fragment {
 //        changeText();
 //    }
 
+    //Dynamic editText and button
     private void changeText() {
         String buttonText = editSave.getText().toString().trim();
         if (buttonText.contentEquals(getResources().getText(R.string.edit))) {
@@ -72,6 +73,7 @@ public class profile extends Fragment {
         }
     }
 
+    //editText field disable
     private void disable() {
         Name.setEnabled(false);
         Phone.setEnabled(false);
@@ -79,6 +81,7 @@ public class profile extends Fragment {
         ConnectId.setEnabled(false);
         Email.setEnabled(false);
     }
+    //editText field enable
     private void enable() {
         Name.setEnabled(true);
         Phone.setEnabled(true);
@@ -87,6 +90,7 @@ public class profile extends Fragment {
         Email.setEnabled(true);
         showCursor();
     }
+    //showCourser in NameTextField
     private void showCursor(){
         Name.setFocusableInTouchMode(true);
         Name.requestFocus();
@@ -95,7 +99,7 @@ public class profile extends Fragment {
     }
 
 
-    //    validate user profile
+    //    validate user profile editTexts
     private boolean validateName(){
         String userInputName = Name.getEditableText().toString().trim();
         if (userInputName.isEmpty()) {
@@ -162,26 +166,6 @@ public class profile extends Fragment {
             return true;
         }
     }
-
-
+    //end validation
 
 }
-
-//    @Override
-//    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-//        super.onViewCreated(view, savedInstanceState);
-//
-//        final NavController navController = Navigation.findNavController(view);
-
-//        ImageView ImageView = view.findViewById(R.id.forowardProfile);
-
-//        ImageView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                navController.navigate(R.id.action_dashboard_to_profile);
-//            }
-//        });
-
-//    }
-
-//}

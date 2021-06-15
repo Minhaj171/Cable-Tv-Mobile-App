@@ -23,6 +23,7 @@
         android:id="@+id/textView"
         android:layout_width="165dp"
         android:layout_height="36dp"
+        android:textSize="16sp"
         android:text="@string/feedback"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
@@ -43,9 +44,10 @@
         app:layout_constraintVertical_bias="0.365" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/feedbackText"
         android:layout_width="336dp"
         android:layout_height="304dp"
+        android:inputType="textMultiLine"
         android:background="@drawable/square_shape_of_edittext"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
@@ -69,15 +71,16 @@
         app:layout_constraintGuide_begin="377dp" />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/feedbackButton"
         android:layout_width="338dp"
         android:layout_height="53dp"
         android:layout_marginTop="44dp"
-        android:text="Send"
+        android:text="Submit"
         android:background="@drawable/edit_profile_shape"
         android:textAllCaps="false"
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toBottomOf="@+id/editText5" />
+        app:layout_constraintTop_toBottomOf="@+id/feedbackText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

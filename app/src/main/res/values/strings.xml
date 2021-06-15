@@ -13,7 +13,7 @@
     <!-- TODO: Remove or change this placeholder text -->
 
     <!--    Main Activity Xml-->
-    <string name="feedback">Select feedback type</string>
+    <string name="feedback">feedback type</string>
     <string name="login">login</string>
     <string name="signup">Signup</string>
     <string name="getConnection">Get Connection</string>
@@ -36,4 +36,15 @@
     <string name="name">Enter name</string>
     <string name="phone_number">Phone number</string>
     <string name="subscribe">Subscribe</string>
+
+    <string-array name="selectFeedbackType">
+        <item>Select Type</item>
+        <item>Network Problem</item>
+        <item>Channels not clear</item>
+        <item>Package not active yet</item>
+        <item>Cant subscribe the package</item>
+        <item>Payment is not working</item>
+        <item>Channels not showing in package</item>
+        <item>Added more channels</item>
+    </string-array>
 </resources>
