@@ -4,6 +4,7 @@ import android.content.ClipData;
 import android.os.Bundle;
 import android.renderscript.ScriptGroup;
 import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,10 +30,8 @@ import java.util.Objects;
 import butterknife.BindView;
 
 public class login extends Fragment {
-    @BindView(R.id.provide_clint_email)
-    EditText emailClint;
-    @BindView(R.id.provide_clint_password)
-    EditText passwordClint;
+    EditText emailClint, passwordClint;
+    Button loginButton;
 
 
 
@@ -43,39 +42,54 @@ public class login extends Fragment {
 
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_login, container, false);
+        emailClint = view.findViewById(R.id.provide_clint_email);
+        passwordClint = view.findViewById(R.id.provide_clint_password);
+        loginButton = view.findViewById(R.id.apploginButton);
 //        FragmentLoginBinding binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false);
 //        Item item = new Item();
 //        item.setName("Thomas");
 //        binding.setItem("Hello Bangladesh");
 //        return binding.getRoot();
+
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final NavController navController = Navigation.findNavController(view);
+                if (!validateEmail() || !validatePassword()){
+                    return;
+                }
+                Toast.makeText(getContext(),"Successfully login",Toast.LENGTH_SHORT).show();
+                navController.navigate(R.id.action_login_to_dashboard);
+                emailClint.setText("");
+                passwordClint.setText("");
+            }
+        });
+
         return view;
 //
 
     }
 
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-        final NavController navController = Navigation.findNavController(view);
-
-        Button button = view.findViewById(R.id.apploginButton);
-        TextView textView = view.findViewById(R.id.appSignup);
-
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                navController.navigate(R.id.action_login_to_dashboard);
-            }
-        });
-
-        textView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                navController.navigate(R.id.action_login_to_getConnection);
-            }
-        });
-
+    private boolean validateEmail(){
+        String userInputEmail = emailClint.getEditableText().toString().trim();
+        if (userInputEmail.isEmpty()) {
+            emailClint.setError("Please enter the Email Address");
+            return false;
+        }  else if (!Patterns.EMAIL_ADDRESS.matcher(userInputEmail).matches()) {
+            emailClint.setError("Please enter a valid Email Address");
+            return false;
+        } else {
+            return true;
+        }
     }
+    private boolean validatePassword(){
+        String userInputPassword = passwordClint.getEditableText().toString().trim();
+        if (userInputPassword.isEmpty()) {
+            passwordClint.setError("Please enter the Password");
+            return false;
+        }   else {
+            return true;
+        }
+    }
+
 }
