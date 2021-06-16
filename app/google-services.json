@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "195151463013",
+    "project_id": "cabletv-f5ff7",
+    "storage_bucket": "cabletv-f5ff7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:195151463013:android:254ad2efce5b475d347c8c",
+        "android_client_info": {
+          "package_name": "com.cabletv.cabletvdigitalization"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "195151463013-55r06ruuc3r9jie249advtv4bgc41qsc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlhoLB0qqhucuKaVbJSDte1cHvMeMoe-4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "195151463013-55r06ruuc3r9jie249advtv4bgc41qsc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

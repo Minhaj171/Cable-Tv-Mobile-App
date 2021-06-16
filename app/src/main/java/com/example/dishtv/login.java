@@ -28,8 +28,10 @@ import com.example.dishtv.databinding.FragmentLoginBinding;
 import java.util.Objects;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 public class login extends Fragment {
+    TextView getConnection;
     EditText emailClint, passwordClint;
     Button loginButton;
 
@@ -45,11 +47,20 @@ public class login extends Fragment {
         emailClint = view.findViewById(R.id.provide_clint_email);
         passwordClint = view.findViewById(R.id.provide_clint_password);
         loginButton = view.findViewById(R.id.apploginButton);
+        getConnection = view.findViewById(R.id.get_connection);
 //        FragmentLoginBinding binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false);
 //        Item item = new Item();
 //        item.setName("Thomas");
 //        binding.setItem("Hello Bangladesh");
 //        return binding.getRoot();
+
+        getConnection.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final NavController navController = Navigation.findNavController(view);
+                navController.navigate(R.id.action_login_to_getConnection);
+            }
+        });
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,9 +77,12 @@ public class login extends Fragment {
         });
 
         return view;
-//
-
     }
+//    @OnClick(R.id.get_connection)
+//    public void onClick(){
+//        final NavController navController = Navigation.findNavController(getView());
+//        navController.navigate(R.id.action_login_to_dashboard);
+//    }
 
     private boolean validateEmail(){
         String userInputEmail = emailClint.getEditableText().toString().trim();
