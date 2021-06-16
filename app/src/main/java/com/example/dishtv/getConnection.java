@@ -9,12 +9,14 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
 import android.service.autofill.UserData;
+import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import butterknife.BindView;
 
@@ -26,6 +28,7 @@ public class getConnection extends Fragment {
     EditText clintAddress;
     EditText clintEmail;
     EditText clintPassword;
+    Button Apply;
 
 
     @Override
@@ -39,6 +42,19 @@ public class getConnection extends Fragment {
          clintAddress = view.findViewById(R.id.client_address);
          clintEmail = view.findViewById(R.id.clint_email);
          clintPassword = view.findViewById(R.id.clint_password);
+         Apply = view.findViewById(R.id.apply_button);
+
+         Apply.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 final NavController navController = Navigation.findNavController(view);
+                 if(!validateName() || !validatePhone() || !validateAddress() || !validateEmail()){
+                     return;
+                 }
+                 Toast.makeText(getContext(), "Connection Added",Toast.LENGTH_SHORT).show();
+                 navController.navigate(R.id.action_getConnection_to_login);
+             }
+         });
 
 
 
@@ -46,12 +62,61 @@ public class getConnection extends Fragment {
         return view;
     }
 
+//    Validation of get Connection
 
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-
+    private boolean validateName(){
+        String userInputName = clientName.getEditableText().toString().trim();
+        if (userInputName.isEmpty()) {
+            clientName.setError("Please enter the Your Name");
+            return false;
+        } else if (userInputName.length() > 25) {
+            clientName.setError("Your text is too long");
+            return false;
+        }
+        else {
+            return true;
+        }
     }
+
+    private boolean validatePhone(){
+        String userInputPhone = clintPhone.getEditableText().toString().trim();
+        if (userInputPhone.isEmpty()) {
+            clintPhone.setError("Please enter the Phone Number");
+            return false;
+        } else if (userInputPhone.length() > 15) {
+            clintPhone.setError("Your text is too long");
+            return false;
+        } else if (!Patterns.PHONE.matcher(userInputPhone).matches()) {
+            clintPhone.setError("Please enter a valid Phone number");
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+
+    private boolean validateAddress() {
+        String userInputAddress = clintAddress.getEditableText().toString().trim();
+        if (userInputAddress.isEmpty()) {
+            clintAddress.setError("Please enter Your Address");
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+
+    private boolean validateEmail() {
+        String userInputEmail = clintEmail.getEditableText().toString().trim();
+        if (userInputEmail.isEmpty()) {
+            clintEmail.setError("Please enter the Email Address");
+            return false;
+        }  else if (!Patterns.EMAIL_ADDRESS.matcher(userInputEmail).matches()) {
+            clintEmail.setError("Please enter a valid Email Address");
+            return false;
+        } else {
+            return true;
+        }
+    }
+    //end validation
 }

@@ -6,9 +6,9 @@ android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
 
-//    dataBinding{
-//        enabled = true
-//    }
+    dataBinding{
+        enabled = true
+    }
 
     defaultConfig {
         applicationId "com.example.dishtv"
@@ -52,10 +52,10 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
     implementation 'com.github.bumptech.glide:glide:4.11.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
-    implementation 'com.google.firebase:firebase-auth:21.0.1'
-    implementation 'com.google.firebase:firebase-database:20.0.0'
-    implementation 'com.google.firebase:firebase-storage:20.0.0'
-    implementation platform('com.google.firebase:firebase-bom:27.0.0')
+//    implementation 'com.google.firebase:firebase-auth:21.0.1'
+//    implementation 'com.google.firebase:firebase-database:20.0.0'
+//    implementation 'com.google.firebase:firebase-storage:20.0.0'
+//    implementation platform('com.google.firebase:firebase-bom:27.0.0')
 
 }
-apply plugin: 'com.google.gms.google-services'
+//apply plugin: 'com.google.gms.google-services'
