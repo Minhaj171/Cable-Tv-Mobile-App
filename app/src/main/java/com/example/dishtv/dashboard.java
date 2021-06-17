@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -48,6 +49,7 @@ public class dashboard extends Fragment {
             @Override
             public void onClick(View v) {
                 navController.navigate(R.id.action_dashboard_to_channel_package);
+                Toast.makeText(getContext(),"Add Package",Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -55,6 +57,7 @@ public class dashboard extends Fragment {
             @Override
             public void onClick(View v) {
                 navController.navigate(R.id.action_dashboard_to_profile);
+                Toast.makeText(getContext(),"Update Profile",Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -62,6 +65,7 @@ public class dashboard extends Fragment {
             @Override
             public void onClick(View v) {
                 navController.navigate(R.id.action_dashboard_to_payment);
+                Toast.makeText(getContext(),"Payment",Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -69,6 +73,7 @@ public class dashboard extends Fragment {
             @Override
             public void onClick(View v) {
                 navController.navigate(R.id.action_dashboard_to_feedback);
+                Toast.makeText(getContext(),"Feedback",Toast.LENGTH_SHORT).show();
             }
         });
 

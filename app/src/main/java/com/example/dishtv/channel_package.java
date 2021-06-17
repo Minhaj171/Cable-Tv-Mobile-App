@@ -56,6 +56,7 @@ public class channel_package extends Fragment implements ChannelDataListener{
         if (position == 0){
             NavController navController = Navigation.findNavController(getActivity(), R.id.fragment3);
             navController.navigate(R.id.action_channel_package_to_channel);
+            Toast.makeText(getContext(),"Channels",Toast.LENGTH_SHORT).show();
             channel_package channel_package = new channel_package();
 
 //            Bundle args = new Bundle();

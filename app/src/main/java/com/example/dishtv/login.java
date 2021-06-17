@@ -59,6 +59,7 @@ public class login extends Fragment {
             public void onClick(View v) {
                 final NavController navController = Navigation.findNavController(view);
                 navController.navigate(R.id.action_login_to_getConnection);
+                Toast.makeText(getContext(),"Apply Connection",Toast.LENGTH_SHORT).show();
             }
         });
 

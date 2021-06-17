@@ -115,6 +115,10 @@
         android:id="@+id/channelProfile"
         android:name="com.example.dishtv.ChannelProfile"
         android:label="fragment_channel_profile"
-        tools:layout="@layout/fragment_channel_profile" />
+        tools:layout="@layout/fragment_channel_profile" >
+        <action
+            android:id="@+id/action_channelProfile_to_channel"
+            app:destination="@id/channel" />
+    </fragment>
 
 </navigation>

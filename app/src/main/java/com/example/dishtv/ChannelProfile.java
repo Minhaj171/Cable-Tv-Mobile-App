@@ -2,11 +2,16 @@ package com.example.dishtv;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -47,6 +52,7 @@ public class ChannelProfile extends Fragment {
             String channel_name = bundle.getString("channelName");
             String channel_type = bundle.getString("channelType");
             setImageUrl(image,channel_name,channel_type);
+            Toast.makeText(getContext(),"Channel Profile",Toast.LENGTH_SHORT).show();
         }
         return view;
     }
@@ -60,6 +66,21 @@ public class ChannelProfile extends Fragment {
                 .into(channelCoverUrl);
     }
 
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+//
+//        final NavController navController = Navigation.findNavController(view);
+//
+//
+//        button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                navController.navigate(R.id.action_signup_to_login);
+//            }
+//        });
+
+    }
 
 //
 //    private void getIncomingIntent() {
