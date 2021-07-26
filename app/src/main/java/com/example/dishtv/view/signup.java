@@ -1,4 +1,4 @@
-package com.example.dishtv;
+package com.example.dishtv.view;
 
 import android.os.Bundle;
 
@@ -15,6 +15,8 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.dishtv.R;
 
 import butterknife.BindView;
 

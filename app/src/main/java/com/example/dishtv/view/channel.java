@@ -1,21 +1,19 @@
-package com.example.dishtv;
+package com.example.dishtv.view;
 
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.Toast;
+
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.dishtv.adapter.ChannelAdapter;
+import com.example.dishtv.model.ChannelData;
+import com.example.dishtv.R;
+
 
 
 public class channel extends Fragment{
@@ -35,7 +33,6 @@ public class channel extends Fragment{
             int position = bundle.getInt("post");
             Toast.makeText(getContext(), String.valueOf(position), Toast.LENGTH_SHORT).show();
         }
-
 
         ChannelData[] channelData = new ChannelData[]{
                 new ChannelData(R.drawable.ic_1st_century_fox, "1st Century fox", "Adventure"),
@@ -75,10 +72,9 @@ public class channel extends Fragment{
                 new ChannelData(R.drawable.ic_viacom, "VIACOM", "Entertainment"),
         };
 
-
-        channelAdapter channelAdapter = new channelAdapter(channelData, getContext());
-        channelAdapter channelAdapter2 = new channelAdapter(channelData2, getContext());
-        channelAdapter channelAdapter3 = new channelAdapter(channelData3, getContext());
+        ChannelAdapter channelAdapter = new ChannelAdapter(channelData, getContext());
+        ChannelAdapter channelAdapter2 = new ChannelAdapter(channelData2, getContext());
+        ChannelAdapter channelAdapter3 = new ChannelAdapter(channelData3, getContext());
         recyclerView.setAdapter(channelAdapter);
 
         return view;

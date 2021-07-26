@@ -1,4 +1,4 @@
-package com.example.dishtv;
+package com.example.dishtv.view;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -17,7 +17,13 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-public class channel_package extends Fragment implements ChannelDataListener{
+import com.example.dishtv.ChannelDataListener;
+
+import com.example.dishtv.R;
+import com.example.dishtv.adapter.PackageAdapter;
+import com.example.dishtv.model.PackageData;
+
+public class channel_package extends Fragment implements ChannelDataListener {
 
 
     @Override
@@ -28,6 +34,7 @@ public class channel_package extends Fragment implements ChannelDataListener{
         RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
+
         PackageData[] packageData = new PackageData[]{
           new PackageData(R.drawable.ic_premium_file, "Premium", "Best combo 50+ channels", "1000.tk"),
           new PackageData(R.drawable.ic_clapperboard, "Entertainment 24/7", "35 Channels", "800.tk"),

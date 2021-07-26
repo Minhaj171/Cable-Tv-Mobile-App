@@ -1,4 +1,4 @@
-package com.example.dishtv;
+package com.example.dishtv.adapter;
 
 import android.app.Activity;
 import android.content.Context;
@@ -14,6 +14,10 @@ import androidx.annotation.NonNull;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.dishtv.ChannelDataListener;
+import com.example.dishtv.R;
+import com.example.dishtv.model.PackageData;
 
 import org.jetbrains.annotations.NotNull;
 

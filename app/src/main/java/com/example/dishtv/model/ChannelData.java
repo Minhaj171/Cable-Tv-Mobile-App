@@ -1,4 +1,4 @@
-package com.example.dishtv;
+package com.example.dishtv.model;
 
 /**
  * Created by MD Minhajul Islam on 6/13/2021.

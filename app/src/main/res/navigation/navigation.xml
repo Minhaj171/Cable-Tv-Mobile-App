@@ -59,7 +59,7 @@
     </fragment>
     <fragment
         android:id="@+id/channel"
-        android:name="com.example.dishtv.channel"
+        android:name="com.example.dishtv.view.channel"
         android:label="fragment_channel"
         tools:layout="@layout/fragment_channel" >
         <action

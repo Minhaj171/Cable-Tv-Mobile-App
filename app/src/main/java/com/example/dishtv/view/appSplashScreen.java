@@ -1,4 +1,4 @@
-package com.example.dishtv;
+package com.example.dishtv.view;
 
 import android.os.Bundle;
 
@@ -13,6 +13,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+
+import com.example.dishtv.R;
 
 public class appSplashScreen extends Fragment {
 

@@ -1,8 +1,10 @@
-package com.example.dishtv;
+package com.example.dishtv.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.dishtv.R;
 
 public class DashboardMain extends AppCompatActivity {
 

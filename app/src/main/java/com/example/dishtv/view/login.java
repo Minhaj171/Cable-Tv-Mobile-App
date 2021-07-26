@@ -1,4 +1,4 @@
-package com.example.dishtv;
+package com.example.dishtv.view;
 
 import android.content.ClipData;
 import android.os.Bundle;
@@ -23,6 +23,7 @@ import androidx.lifecycle.Observer;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import com.example.dishtv.R;
 import com.example.dishtv.databinding.FragmentLoginBinding;
 
 import java.util.Objects;

@@ -1,36 +1,33 @@
-package com.example.dishtv;
+package com.example.dishtv.adapter;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
-import android.icu.text.Transliterator;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.dishtv.R;
+import com.example.dishtv.model.ChannelData;
+import com.example.dishtv.view.ChannelProfile;
 
 import org.jetbrains.annotations.NotNull;
 
 /**
  * Created by MD Minhajul Islam on 6/13/2021.
  */
-public class channelAdapter extends RecyclerView.Adapter<channelAdapter.ViewHolder>{
+public class ChannelAdapter extends RecyclerView.Adapter<ChannelAdapter.ViewHolder>{
     ChannelData[] channelData;
     Context context;
 
 
-    public channelAdapter(ChannelData[] channelData, Context context) {
+    public ChannelAdapter(ChannelData[] channelData, Context context) {
         this.channelData = channelData;
         this.context = context;
     }
@@ -39,7 +36,7 @@ public class channelAdapter extends RecyclerView.Adapter<channelAdapter.ViewHold
     @NonNull
     @NotNull
     @Override
-    public channelAdapter.ViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
+    public ChannelAdapter.ViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
         Context context;
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View view = layoutInflater.inflate(R.layout.channel_item_list, parent, false);
